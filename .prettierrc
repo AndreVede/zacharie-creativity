@@ -1,0 +1,10 @@
+{
+    "semi": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "embeddedLanguageFormatting": "auto",
+    "bracketSameLine": false,
+    "quoteProps": "as-needed",
+    "trailingComma": "es5",
+    "singleQuote": true
+}
