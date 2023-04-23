@@ -53,7 +53,6 @@ export const fontMonserrat = ({ weight }: { weight: string }) =>
     }[weight]);
 
 export const GlobalStyle = createGlobalStyle`
-    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
     body {
         ${flexCenter()}
         ${fontMonserrat({ weight: 'regular' })}

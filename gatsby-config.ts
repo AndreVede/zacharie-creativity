@@ -5,7 +5,17 @@ const config: GatsbyConfig = {
     title: `Zacharie-Creativity`,
     description: 'Portfolio wich demonstrate the skills of Zacharie Boisnard.',
     author: 'Zacharie Boisnard',
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/'
+      },
+      {
+        name: 'post 1',
+        link: '/post-1'
+      }
+    ]
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -36,6 +46,14 @@ const config: GatsbyConfig = {
       options: {
         "name": "post",
         "path": "./src/content"
+      }
+    }, {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat:300,400,500,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     }]
 };
