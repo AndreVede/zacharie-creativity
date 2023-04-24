@@ -32,7 +32,7 @@ export const touchPad = (content: SimpleInterpolation) => {
     `;
 };
 
-export const fontMonserrat = ({ weight }: { weight: string }) =>
+export const fontMonserrat = (weight: string) =>
     ({
         light: {
             fontFamily: "'Montserrat', sans-serif",
@@ -55,7 +55,7 @@ export const fontMonserrat = ({ weight }: { weight: string }) =>
 export const GlobalStyle = createGlobalStyle`
     body {
         ${flexCenter()}
-        ${fontMonserrat({ weight: 'regular' })}
+        ${fontMonserrat('regular')}
         font-size: 12px;
         margin: 0;
         padding: 0;

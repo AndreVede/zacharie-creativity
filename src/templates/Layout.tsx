@@ -1,16 +1,23 @@
 import * as React from 'react';
 import Header from '../components/Header';
-import { GlobalStyle } from '../styles-utils/styles-variables';
+import { GlobalStyle, flexCenter } from '../styles-utils/styles-variables';
 import Footer from '../components/Footer';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { ThemeDefault } from '../styles-utils/Themes';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, PageProps } from 'gatsby';
 
 interface LayoutProps {
+    location?: PageProps['location'];
     children?: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Main = styled.main`
+    margin-top: 50px;
+    ${flexCenter('column', 'flex-start')}
+    gap: 10px;
+`;
+
+const Layout: React.FC<LayoutProps> = ({ location, children }) => {
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -28,8 +35,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <>
             <GlobalStyle />
             <ThemeProvider theme={ThemeDefault}>
-                <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
-                <main>{children}</main>
+                <Header
+                    siteTitle={data.site.siteMetadata.title}
+                    menuLinks={data.site.siteMetadata.menuLinks}
+                    location={location}
+                />
+                <Main>{children}</Main>
                 <Footer />
             </ThemeProvider>
         </>

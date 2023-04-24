@@ -3,8 +3,8 @@ import type { HeadFC, PageProps } from 'gatsby';
 import Layout from '../templates/Layout';
 import { SEO } from '../components/SEO';
 
-const IndexPage: React.FC<PageProps> = () => {
-  return <Layout></Layout>;
+const IndexPage: React.FC<PageProps> = ({ location }) => {
+    return <Layout location={location}></Layout>;
 };
 
 export default IndexPage;

@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
       },
       {
         name: 'post 1',
-        link: '/post-1'
+        link: '/post-1/'
       }
     ]
   },
