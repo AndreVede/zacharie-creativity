@@ -3,12 +3,13 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Zacharie-Creativity`,
-    description: 'Portfolio wich demonstrate the skills of Zacharie Boisnard.',
+    description: 'Portfolio présentant les compétences de Zacharie Boisnard.',
     author: 'Zacharie Boisnard',
     siteUrl: `https://www.yourdomain.tld`,
+    lang: 'fr',
     menuLinks: [
       {
-        name: 'home',
+        name: 'Accueil',
         link: '/'
       },
       {
