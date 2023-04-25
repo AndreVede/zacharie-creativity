@@ -35,11 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
         <>
             <GlobalStyle />
             <ThemeProvider theme={ThemeDefault}>
-                <Header
-                    siteTitle={data.site.siteMetadata.title}
-                    menuLinks={data.site.siteMetadata.menuLinks}
-                    location={location}
-                />
+                <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
                 <Main>{children}</Main>
                 <Footer />
             </ThemeProvider>

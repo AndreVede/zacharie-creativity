@@ -60,7 +60,6 @@ interface HeaderProps {
         name: string;
         link: string;
     }[];
-    location?: PageProps['location'];
 }
 
 const Header: React.FC<HeaderProps> = ({ siteTitle, menuLinks }) => {
@@ -71,10 +70,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, menuLinks }) => {
                 <ListNav>
                     {menuLinks.map((menuLink, i) => (
                         <li key={i + '-link-header'}>
-                            <LinkNavHeader
-                                className={location.pathname === menuLink.link ? 'activePage' : ''}
-                                to={menuLink.link}
-                            >
+                            <LinkNavHeader activeClassName="activePage" to={menuLink.link} {...Link.arguments}>
                                 {menuLink.name}
                             </LinkNavHeader>
                         </li>
