@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link, PageProps } from 'gatsby';
+import { Link } from 'gatsby';
 import { flexCenter, fontMonserrat } from '../styles-utils/styles-variables';
 
 const HeaderContainer = styled.header`
