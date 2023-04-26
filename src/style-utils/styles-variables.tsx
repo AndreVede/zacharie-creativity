@@ -54,7 +54,11 @@ export const fontMonserrat = (weight: string) =>
 
 export const GlobalStyle = createGlobalStyle`
     body {
-        ${flexCenter()}
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-content: center;
+        justify-content: flex-start;
         ${fontMonserrat('regular')}
         font-size: 12px;
         margin: 0;
