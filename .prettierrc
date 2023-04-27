@@ -6,5 +6,7 @@
     "bracketSameLine": false,
     "quoteProps": "as-needed",
     "trailingComma": "es5",
-    "singleQuote": true
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 120
 }
