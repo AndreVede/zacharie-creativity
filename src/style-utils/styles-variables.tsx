@@ -60,9 +60,9 @@ export const GlobalStyle = createGlobalStyle`
         align-content: center;
         justify-content: flex-start;
         ${fontMonserrat('regular')}
-        font-size: 12px;
+        font-size: 15px;
         margin: 0;
         padding: 0;
-        min-width: 300px;
+        min-width: ${breakPoints.minPhone}px;
     }
 `;

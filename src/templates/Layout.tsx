@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import styled, { ThemeProvider } from 'styled-components';
 import { ThemeDefault } from '../style-utils/Themes';
 import { useStaticQuery, graphql, PageProps } from 'gatsby';
+import { cssBase } from '../style-utils/styles-base';
 
 interface LayoutProps {
     location?: PageProps['location'];
@@ -14,6 +15,7 @@ interface LayoutProps {
 const Main = styled.main`
     ${flexCenter('column', 'flex-start')}
     gap: 10px;
+    ${cssBase}
 `;
 
 const Layout: React.FC<LayoutProps> = ({ location, children }) => {

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from './Layout';
 import { SEO } from '../components/SEO';
 
-const Posts = ({ data, location }: PageProps<Queries.Query>) => {
+const Posts: React.FC<PageProps<Queries.Query>> = ({ data, location }) => {
     const markdown = data.markdownRemark;
     return (
         <Layout location={location}>
@@ -20,6 +20,7 @@ interface DataHead {
     markdownRemark?: {
         frontmatter?: {
             title?: string;
+            description?: string;
         };
     };
 }
@@ -27,7 +28,9 @@ interface DataHead {
 export const Head: HeadFC = ({ data }: HeadProps<DataHead>) => {
     const markdown = data.markdownRemark;
     const title = markdown?.frontmatter?.title;
-    return <SEO title={title ? title : 'Post'}></SEO>;
+    const description = markdown?.frontmatter?.description;
+
+    return <SEO title={title ? title : 'Post'} description={description}></SEO>;
 };
 
 export const query = graphql`
@@ -36,6 +39,7 @@ export const query = graphql`
             html
             frontmatter {
                 title
+                description
             }
         }
     }
