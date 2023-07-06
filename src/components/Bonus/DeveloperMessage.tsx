@@ -1,5 +1,5 @@
 import * as React from 'react';
-import useKonamiCode from '../../hooks/Konami/useKonamiCode';
+import useKonamiCode from '../../hooks/SecretCode/useKonamiCode';
 import styled, { css } from 'styled-components';
 import { flexCenter } from '../../style-utils/styles-variables';
 

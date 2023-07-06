@@ -1,20 +1,7 @@
 import * as React from 'react';
 import useInputEvent from './useInputEvent';
 
-const konamiCode = [
-    'ArrowUp',
-    'ArrowUp',
-    'ArrowDown',
-    'ArrowDown',
-    'ArrowLeft',
-    'ArrowRight',
-    'ArrowLeft',
-    'ArrowRight',
-    'b',
-    'a',
-];
-
-const useKonamiCode = () => {
+const useSecretCode = (secretCode: Array<string>) => {
     const [count, setCount] = React.useState<number>(0);
     const [success, setSuccess] = React.useState<boolean>(false);
     const key = useInputEvent();
@@ -24,20 +11,20 @@ const useKonamiCode = () => {
             return;
         }
 
-        if (key.toLowerCase() !== konamiCode[count].toLowerCase()) {
+        if (key.toLowerCase() !== secretCode[count].toLowerCase()) {
             setCount(0);
             return;
         }
 
         setCount((i) => {
-            if (count + 1 === konamiCode.length) {
+            if (count + 1 === secretCode.length) {
                 return i;
             } else {
                 return i + 1;
             }
         });
 
-        if (count + 1 === konamiCode.length) {
+        if (count + 1 === secretCode.length) {
             setSuccess(true);
             return;
         }
@@ -46,4 +33,4 @@ const useKonamiCode = () => {
     return success;
 };
 
-export default useKonamiCode;
+export default useSecretCode;
