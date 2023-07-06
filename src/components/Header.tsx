@@ -40,6 +40,7 @@ const LinkNavHeader = styled(Link).attrs<LinkNavProps>((p) => ({
     ${(p: LinkNavProps) => fontMonserrat(p.weight)}
     font-size: ${(p: LinkNavProps) => p.size};
     text-decoration: none;
+    text-transform: uppercase;
 
     &.activePage {
         text-decoration: underline;

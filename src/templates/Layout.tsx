@@ -6,6 +6,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { ThemeDefault } from '../style-utils/Themes';
 import { useStaticQuery, graphql, PageProps } from 'gatsby';
 import { cssBase } from '../style-utils/styles-base';
+import DeveloperMessage from '../components/Bonus/DeveloperMessage';
 
 interface LayoutProps {
     location?: PageProps['location'];
@@ -37,7 +38,10 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
             <GlobalStyle />
             <ThemeProvider theme={ThemeDefault}>
                 <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
-                <Main>{children}</Main>
+                <Main>
+                    <DeveloperMessage />
+                    {children}
+                </Main>
                 <Footer siteTitle={data.site.siteMetadata.title} />
             </ThemeProvider>
         </>
