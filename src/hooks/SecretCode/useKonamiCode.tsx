@@ -1,4 +1,4 @@
-import useSecretCode from './useSecretCode';
+import useSecretCode, { SecretCodeProps } from './useSecretCode';
 
 const konamiCode = [
     'ArrowUp',
@@ -13,9 +13,9 @@ const konamiCode = [
     'a',
 ];
 
-const useKonamiCode = () => {
-    const success = useSecretCode(konamiCode);
-    return success;
+const useKonamiCode = (): SecretCodeProps => {
+    const [success, setSuccess] = useSecretCode(konamiCode);
+    return [success, setSuccess];
 };
 
 export default useKonamiCode;

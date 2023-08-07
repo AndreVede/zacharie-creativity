@@ -45,7 +45,6 @@ const checkAndGetImage = (query: Queries.Query): IGatsbyImageData | null => {
 };
 
 const Banner: React.FC<BannerProps> = ({ bannerMessage, imageQuery, altImg }) => {
-    console.log(imageQuery);
     const image = checkAndGetImage(imageQuery);
 
     return (

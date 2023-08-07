@@ -14,6 +14,8 @@ const IndexPage: React.FC<PageProps<Queries.Query>> = ({ data, location }) => {
                 altImg="Voie Lactée"
                 bannerMessage="Développons nos idées, libérons la créativité."
             />
+            <h2>Présentations</h2>
+            <p>Je suis Zacharie Boisnard, Développeur FullStack pour vous servir.</p>
         </Layout>
     );
 };

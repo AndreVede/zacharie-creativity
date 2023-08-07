@@ -1,7 +1,9 @@
 import * as React from 'react';
 import useInputEvent from './useInputEvent';
 
-const useSecretCode = (secretCode: Array<string>) => {
+export type SecretCodeProps = [boolean, (value: React.SetStateAction<boolean>) => void];
+
+const useSecretCode = (secretCode: Array<string>): SecretCodeProps => {
     const [count, setCount] = React.useState<number>(0);
     const [success, setSuccess] = React.useState<boolean>(false);
     const key = useInputEvent();
@@ -26,11 +28,12 @@ const useSecretCode = (secretCode: Array<string>) => {
 
         if (count + 1 === secretCode.length) {
             setSuccess(true);
+            setCount(0);
             return;
         }
     }, [key]);
 
-    return success;
+    return [success, setSuccess];
 };
 
 export default useSecretCode;

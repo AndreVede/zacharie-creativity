@@ -7,6 +7,9 @@ import { ThemeDefault } from '../style-utils/Themes';
 import { useStaticQuery, graphql, PageProps } from 'gatsby';
 import { cssBase } from '../style-utils/styles-base';
 import DeveloperMessage from '../components/Bonus/DeveloperMessage';
+import { config } from '@fortawesome/fontawesome-svg-core';
+// Disable the auto CSS insertion
+config.autoAddCss = false;
 
 interface LayoutProps {
     location?: PageProps['location'];
