@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { flexCenter, fontMonserrat } from '../style-utils/styles-variables';
+import IconeSite from './IconeSite';
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -10,10 +11,9 @@ const HeaderContainer = styled.header`
     align-items: center;
     align-content: center;
 
-    padding: 0 30px;
+    padding: 5px 30px;
 
     background: ${(p) => p.theme.colors.dark};
-    height: 50px;
     font-size: large;
     color: white;
 `;
@@ -59,10 +59,18 @@ interface HeaderProps {
     }[];
 }
 
+const TitleBlock = styled.div`
+    ${flexCenter('row')}
+    gap: 15px;
+`;
+
 const Header: React.FC<HeaderProps> = ({ siteTitle, menuLinks }) => {
     return (
         <HeaderContainer>
-            <span>{siteTitle}</span>
+            <TitleBlock>
+                <IconeSite height={40} width={40} />
+                <span>{siteTitle}</span>
+            </TitleBlock>
             <Nav>
                 <ListNav>
                     {menuLinks.map((menuLink, i) => (
