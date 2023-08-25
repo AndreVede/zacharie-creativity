@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { flexCenter, fontMonserrat } from '../style-utils/styles-variables';
+import IconeSite from './IconeSite';
+import ThemePicker from './ThemePicker';
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -10,10 +12,9 @@ const HeaderContainer = styled.header`
     align-items: center;
     align-content: center;
 
-    padding: 0 30px;
+    padding: 5px 30px;
 
     background: ${(p) => p.theme.colors.dark};
-    height: 50px;
     font-size: large;
     color: white;
 `;
@@ -40,6 +41,7 @@ const LinkNavHeader = styled(Link).attrs<LinkNavProps>((p) => ({
     ${(p: LinkNavProps) => fontMonserrat(p.weight)}
     font-size: ${(p: LinkNavProps) => p.size};
     text-decoration: none;
+    text-transform: uppercase;
 
     &.activePage {
         text-decoration: underline;
@@ -58,21 +60,35 @@ interface HeaderProps {
     }[];
 }
 
+const SubBlock = styled.div`
+    ${flexCenter('row')}
+    gap: 15px;
+`;
+const TitleBlock = styled(SubBlock)``;
+
 const Header: React.FC<HeaderProps> = ({ siteTitle, menuLinks }) => {
     return (
         <HeaderContainer>
-            <span>{siteTitle}</span>
-            <Nav>
-                <ListNav>
-                    {menuLinks.map((menuLink, i) => (
-                        <li key={i + '-link-header'}>
-                            <LinkNavHeader activeClassName="activePage" to={menuLink.link} {...Link.arguments}>
-                                {menuLink.name}
-                            </LinkNavHeader>
-                        </li>
-                    ))}
-                </ListNav>
-            </Nav>
+            <TitleBlock>
+                <Link to="/">
+                    <IconeSite height={40} width={40} />
+                </Link>
+                <span>{siteTitle}</span>
+            </TitleBlock>
+            <SubBlock>
+                <Nav>
+                    <ListNav>
+                        {menuLinks.map((menuLink, i) => (
+                            <li key={i + '-link-header'}>
+                                <LinkNavHeader activeClassName="activePage" to={menuLink.link} {...Link.arguments}>
+                                    {menuLink.name}
+                                </LinkNavHeader>
+                            </li>
+                        ))}
+                    </ListNav>
+                </Nav>
+                <ThemePicker></ThemePicker>
+            </SubBlock>
         </HeaderContainer>
     );
 };
