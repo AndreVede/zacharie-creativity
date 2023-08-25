@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { flexCenter, fontMonserrat } from '../style-utils/styles-variables';
 import IconeSite from './IconeSite';
+import ThemePicker from './ThemePicker';
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -59,29 +60,35 @@ interface HeaderProps {
     }[];
 }
 
-const TitleBlock = styled.div`
+const SubBlock = styled.div`
     ${flexCenter('row')}
     gap: 15px;
 `;
+const TitleBlock = styled(SubBlock)``;
 
 const Header: React.FC<HeaderProps> = ({ siteTitle, menuLinks }) => {
     return (
         <HeaderContainer>
             <TitleBlock>
-                <IconeSite height={40} width={40} />
+                <Link to="/">
+                    <IconeSite height={40} width={40} />
+                </Link>
                 <span>{siteTitle}</span>
             </TitleBlock>
-            <Nav>
-                <ListNav>
-                    {menuLinks.map((menuLink, i) => (
-                        <li key={i + '-link-header'}>
-                            <LinkNavHeader activeClassName="activePage" to={menuLink.link} {...Link.arguments}>
-                                {menuLink.name}
-                            </LinkNavHeader>
-                        </li>
-                    ))}
-                </ListNav>
-            </Nav>
+            <SubBlock>
+                <Nav>
+                    <ListNav>
+                        {menuLinks.map((menuLink, i) => (
+                            <li key={i + '-link-header'}>
+                                <LinkNavHeader activeClassName="activePage" to={menuLink.link} {...Link.arguments}>
+                                    {menuLink.name}
+                                </LinkNavHeader>
+                            </li>
+                        ))}
+                    </ListNav>
+                </Nav>
+                <ThemePicker></ThemePicker>
+            </SubBlock>
         </HeaderContainer>
     );
 };

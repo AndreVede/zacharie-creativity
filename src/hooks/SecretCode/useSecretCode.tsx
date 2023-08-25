@@ -1,7 +1,7 @@
 import * as React from 'react';
 import useInputEvent from './useInputEvent';
 
-export type SecretCodeProps = [boolean, (value: React.SetStateAction<boolean>) => void];
+export type SecretCodeProps = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
 const useSecretCode = (secretCode: Array<string>): SecretCodeProps => {
     const [count, setCount] = React.useState<number>(0);

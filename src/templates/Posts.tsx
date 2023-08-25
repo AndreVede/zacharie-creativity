@@ -3,9 +3,6 @@ import type { HeadFC, HeadProps, PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
 import Layout from './Layout';
 import { SEO } from '../components/SEO';
-import { config } from '@fortawesome/fontawesome-svg-core';
-// Disable the auto CSS insertion
-config.autoAddCss = false;
 
 const Posts: React.FC<PageProps<Queries.Query>> = ({ data, location }) => {
     const markdown = data.markdownRemark;

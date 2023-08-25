@@ -3,7 +3,6 @@ import { HeadFC, PageProps, graphql } from 'gatsby';
 import Layout from '../templates/Layout';
 import { SEO } from '../components/SEO';
 import Banner from '../components/Banner';
-import IconeSite from '../components/IconeSite';
 
 const IndexPage: React.FC<PageProps<Queries.Query>> = ({ data, location }) => {
     const title = data.site?.siteMetadata?.title;
