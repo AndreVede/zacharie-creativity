@@ -27,6 +27,7 @@ const config: GatsbyConfig = {
     // Learn more at: https://gatsby.dev/graphql-typegen
     // "gatsby-plugin-google-gtag" à configurer
     graphqlTypegen: true,
+    pathPrefix: 'zacharie-creativity',
     plugins: [
         'gatsby-plugin-styled-components',
         'gatsby-transformer-remark',
